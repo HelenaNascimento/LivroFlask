@@ -6,6 +6,7 @@ class Config(object):
     TEMPLATE_FOLDER = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'templates')
     ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
     APP = None
+    SQLALCHEMY_DATABASE_URI = 'mysql+mysqldb://user:passwd@host:port/database'
 class DevelopmentConfig(Config):
     TESTING = True
     DEBUG = True
@@ -31,3 +32,5 @@ app_config = {
 'production': ProductionConfig()
 }
 app_active = os.getenv('FLASK_ENV')
+
+#export FLASK_ENV=development 
